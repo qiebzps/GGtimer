@@ -1,4 +1,4 @@
-# 用pygame模块重写
+# 在屏幕上打印倒计时
 '''
 框架：
     引入
@@ -18,6 +18,8 @@ icon = pygame.image.load("g.png")                               # 图标
 count = 0
 fps = 1
 fclock = pygame.time.Clock()                                    # 
+fontsize = 200                                                  # 字体大小
+black = 0, 0, 0
 
 screen = pygame.display.set_mode(size, pygame.RESIZABLE)        # 窗口尺寸和模式
 pygame.display.set_caption("GGtimer")                           # 标题
@@ -31,7 +33,9 @@ while 1:
             pygame.quit()
             sys.exit()
     if count < timer:
-        print(timer - count)
+        last = str(timer-count)
+        print(last)
+        screen.fill(black)
         count += 1
 
     # 刷新
