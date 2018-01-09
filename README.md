@@ -1,2 +1,2 @@
 # GGtimer
-A timer for my love GG.
+A timer for me and my love, GG.
