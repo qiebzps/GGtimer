@@ -1,6 +1,7 @@
 '''
 已解决bug:
     未引入sys模块
+    字体宽度不一致导致的位置变动
 
 增加功能：
     番茄钟的休息时间及结束提醒
@@ -58,7 +59,8 @@ def scrStr(screen, string):
     fontsize = 200                                                                  # 字体大小
     write = 255,255,255                                                             # RGB颜色
     black = 0,0,0
-    font = pygame.font.SysFont('宋体', fontsize)                                    # 字体
+    # font = pygame.font.SysFont('宋体', fontsize)                                    # 字体
+    font = pygame.font.Font('VeraMoBd.ttf', fontsize)                                    # 字体
     text = font.render(string, 1, write)                                            # 内容
     textRec = text.get_rect()                                                       # 内容get_rect
     textRec.center = screen.get_rect().center                                       # 将屏幕中心设为打印内容的中心从而让内容居中
