@@ -94,13 +94,17 @@ def exitXEsc():
                 pygame.quit()
                 sys.exit()
 
-def timer():
-    '''
-    倒计时
-    author:zps
-    mail:1033239636@qq.com
-    '''
-    # 25 分钟工作
+pygame.init()                                           # pygame初始化
+
+size = 600, 400                                         # 窗口大小
+screen = pygame.display.set_mode(size)                  # 窗口大小及模式设置
+pygame.display.set_caption("GGtimer")                   # 标题
+icon = pygame.image.load('g.png')                       # 图标
+pygame.display.set_icon(icon)                           # 图标设置
+
+
+while 1:
+   # 25 分钟工作
     scrStr(screen,"25:00" )                             # 开始计时时在屏幕中心打印"25:00"
 
     for event in pygame.event.get():                    # 响应退出
@@ -116,7 +120,7 @@ def timer():
                 timer = 5                               ## 演示计时5秒
                 #timer = 1500
                 num = timer
-                while 1:
+                while num != 0:
                     exitXEsc()                          # 响应退出
                     string = numToMS(num)               # 将num 转化为 分：秒  
                     scrStr(screen, string)              # 将字符串打印到屏幕中心
@@ -129,10 +133,8 @@ def timer():
                         # 5 分钟休息
                         time.sleep(1)
                         scrStr(screen,"05:00" )         # 开始计时时在屏幕中心打印"25:00"
-                        time.sleep(1)
-
-                        # timer = 3                     ## 演示计时3秒
-                        timer = 300                     # 5分钟
+                        timer = 3                     ## 演示计时3秒
+                        #timer = 300                     # 5分钟
                         num = timer
                         while 1:
                             exitXEsc()                  # 响应退出
@@ -145,17 +147,6 @@ def timer():
                             pygame.display.update()     # 刷新屏幕
                             if num == 0:                # num 为0 时，跳出
                                 break
-                        break
+            print ("OK")
 
 
-pygame.init()                                           # pygame初始化
-
-size = 600, 400                                         # 窗口大小
-screen = pygame.display.set_mode(size)                  # 窗口大小及模式设置
-pygame.display.set_caption("GGtimer")                   # 标题
-icon = pygame.image.load('g.png')                       # 图标
-pygame.display.set_icon(icon)                           # 图标设置
-
-
-while 1:
-    timer()
